@@ -13,7 +13,6 @@ const getUser = async (username) => {
     id: repo.id,
     name: repo.name,
     language: repo.language,
-    stargazers_count: repo.stargazers_count
   })
 
   const repos = originalRepos

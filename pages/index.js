@@ -1,39 +1,51 @@
 import React from 'react';
+import Link from 'next/link';
+import { FaGithub } from 'react-icons/fa';
+import PageHead from '../components/PageHead';
+import Hero from '../components/Hero'
 import getUser from '../utils/getUser';
 
 const Index = ({ repos, user }) => {
   return (
-    <div className="container mx-auto">
-        <div className='flex items-center justify-around my-52 md:my-28'>
+    <>
+      <PageHead />
 
-          <div className='text-center md:text-left'>
-            <h1 className="font-bold text-6xl">
-              <span className='text-green-600'>Hey,</span> <br /> I'm Lucas Azevedo!
-            </h1>
-            <h2 className="text-3xl text-gray-600">I'm a Front-End Developer</h2>
-            <p>GitHub stats: Public repos: {user.public_repos} / Followers: {user.followers}</p>
-            <button className='px-6 py-4 mt-8 rounded font-bold text-white bg-green-600 hover:bg-green-500 transition'>Contact Me</button>
+      <div className='container mx-auto'>
+        <Hero />
+        
+        <div className='p-8 md:p-20'>
+          <div className='md:flex justify-between items-center'>
+            <h2 className='text-2xl md:text-3xl text-center md:text-left font-bold'>My repositories on GitHub:</h2>
+            <p className='flex items-center justify-center h-10'> 
+              <FaGithub className='inline-block text-2xl mr-2' /> 
+              stats: Public repos: {user.public_repos} / Followers: {user.followers}
+            </p>
           </div>
 
-          <img src='/images/lucas.jpg' className='hidden md:block w-2/5' /> 
-
+          {repos.map(repo => {
+            return (
+              <div key={repo.id} className='rounded bg-gray-200 my-4 p-4 hover:shadow-md'>
+                <h3 className='font-bold'>{repo.name}</h3>
+                <p>Language: {repo.language} </p>
+              </div>
+            )
+          })}
         </div>
 
-      <div className='p-8 md:p-20'>
+        <div className='flex flex-col mb-8 text-sm text-center text-gray-600'>
+          <p>This is a practicing project</p>
 
-        <h2 className="text-3xl font-bold mt-16">My repositories on GitHub:</h2>
-        {repos.map(repo => {
-          return (
-            <div key={repo.id} className="rounded bg-gray-200 my-4 p-4 hover:shadow-md">
-              <h3 className="font-bold">{repo.name}</h3>
-              <p>Language: {repo.language} </p>
-            </div>
-          )
-        })}
+          <Link href='https://github.com/lucasbazev/lesson-portfolio-fsm'>
+            <a className='hover:text-green-600 transition'>You can find the source code here</a>
+          </Link>
 
+          <Link href='https://linkedin.com/in/lucasbazev'>
+            <a className='hover:text-green-600 transition'>Designed and Built by Lucas Azevedo</a>
+          </Link>
+        </div>
       </div>
 
-    </div>
+    </>
   )
 }
 

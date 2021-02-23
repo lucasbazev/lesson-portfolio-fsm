@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -9,8 +10,12 @@ const Hero = () => {
           <h1 className='font-bold text-6xl'>
             <span className='text-green-600'>Hey,</span> <br /> I'm Lucas Azevedo!
           </h1>
-          <h2 className='text-3xl text-gray-500'>I'm a Front-End Developer</h2>
-          <button className='px-6 py-4 mt-8 rounded font-bold text-white bg-green-600 hover:bg-green-500 transition'>Contact Me</button>
+          <h2 className='text-3xl text-gray-500 mb-8'>I'm a Front-End Developer</h2>
+          <Link href='https://linkedin.com/in/lucasbazev' className='block' >
+            <a target='_blank' className='px-6 py-4 rounded font-bold text-white bg-green-600 hover:bg-green-500 transition'>
+              Contact Me
+            </a>
+          </Link>
         </div>
 
         <img src='/images/lucas.jpg' className='hidden md:block w-2/5' /> 

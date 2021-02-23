@@ -36,11 +36,11 @@ const Index = ({ repos, user }) => {
           <p>This is a practicing project</p>
 
           <Link href='https://github.com/lucasbazev/lesson-portfolio-fsm'>
-            <a className='hover:text-green-600 transition'>You can find the source code here</a>
+            <a target='_blank' className='hover:text-green-600 transition'>You can find the source code here</a>
           </Link>
 
           <Link href='https://linkedin.com/in/lucasbazev'>
-            <a className='hover:text-green-600 transition'>Designed and Built by Lucas Azevedo</a>
+            <a target='_blank' className='hover:text-green-600 transition'>Designed and Built by Lucas Azevedo</a>
           </Link>
         </div>
       </div>

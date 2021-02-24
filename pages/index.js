@@ -3,7 +3,6 @@ import PageHead from '../components/PageHead';
 import Hero from '../components/Hero';
 import Repos from '../components/Repos';
 import Footer from '../components/Footer';
-import getUser from '../utils/getUser';
 
 const Index = ({ repos, user }) => {
   return (
@@ -22,8 +21,9 @@ const Index = ({ repos, user }) => {
   )
 }
 
-export async function getServerSideProps(context) {
-  const { repos, user } = await getUser('lucasbazev');
+export async function getServerSideProps(context) { 
+  const request = await fetch(process.env.API_URL + '/api/getUserData');
+  const { repos, user } = await request.json();
 
   return {
     props: {

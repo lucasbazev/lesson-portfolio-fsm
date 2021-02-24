@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import ContactMe from './ContactMe';
 
 const Hero = () => {
   return (
@@ -11,11 +11,7 @@ const Hero = () => {
             <span className='text-green-600'>Hey,</span> <br /> I'm Lucas Azevedo!
           </h1>
           <h2 className='text-3xl text-gray-500 mb-8'>I'm a Front-End Developer</h2>
-          <Link href='https://linkedin.com/in/lucasbazev' className='block' >
-            <a target='_blank' className='px-6 py-4 rounded font-bold text-white bg-green-600 hover:bg-green-500 transition'>
-              Contact Me
-            </a>
-          </Link>
+          <ContactMe />
         </div>
 
         <img src='/images/lucas.jpg' className='hidden md:block w-2/5' /> 
